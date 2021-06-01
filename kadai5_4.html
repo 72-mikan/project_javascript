@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="kadai5_4.css">
+  <title>kadai5-4</title>
+</head>
+<body>
+  <input id="text" type="text">
+  <button onclick="check()">確認</button>
+  <script>
+    var check = function(){
+      var myp = document.getElementById("text").value;
+      if(myp == ""){
+        alert("入力をしてください");
+      } else {
+        alert("入力を確認しました");
+      }
+    }
+  </script>
+</body>
+</html>

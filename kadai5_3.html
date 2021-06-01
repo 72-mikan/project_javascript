@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="kadai5_3.css">
+  <title>kadai5-3</title>
+</head>
+<body>
+  <p id="test1">こんにちは</p>
+  <input type="button" value="変換" onclick="myfunc()">
+  <input type="button" value="変更" onclick="myfunc2()">
+  <input type="button" value="戻す" onclick="myfunc3()">
+  
+
+  <script>
+    var myfunc = function(){
+      var myp = document.getElementById("test1");
+      myp.style.color = "red";
+      myp.style.fontSize = "48px";
+    }
+
+    var myfunc2 = function(){
+      document.getElementById("test1").innerHTML = "さようなら";
+    }
+
+    var myfunc3 = function(){
+      var myp = document.getElementById("test1");
+      myp.innerHTML = "こんにちは";
+      myp.style = "";
+    }
+
+  </script>
+</body>
+</html>

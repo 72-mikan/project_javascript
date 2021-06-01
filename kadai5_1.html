@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="kadai5_1.css">
+  <title>kadai5-1</title>
+</head>
+
+<body>
+  <p id="result">hellow</p>
+  <div class="btn1">これはボタンです</div>
+  <div id="aaa" class="div_link">クリック</div>
+</body>
+
+<script>
+  var result = document.getElementById("result");
+  document.getElementById("aaa").onclick = function(){
+    document.getElementById("aaa").innerHTML = "クリックされた";
+  }
+</script>
+
+</html>

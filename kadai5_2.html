@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="kadai5_2.css">
+  <title>kadai5-2</title>
+</head>
+<body>
+  <input id="test1" type="text">
+  <input type="button" value="転記" onclick="myfunc()">
+  <input id="test2" type="text">
+  <script>
+   var myfunc = function(){
+     document.getElementById("test2").value = document.getElementById("test1").value;
+   }
+  </script>
+</body>
+</html>

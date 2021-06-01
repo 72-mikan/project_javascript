@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>kadai5-5電話</title>
+  <link rel="stylesheet" href="kadai5_5_1.css">
+</head>
+<body>
+  <input id="result" type="text" value="">
+  <div>
+    <button class="btn" value="1" onclick="edit(this)">1</button>
+    <button class="btn" value="2" onclick="edit(this)">2</button>
+    <button class="btn" value="3" onclick="edit(this)">3</button>
+  </div>
+  <div>
+    <button class="btn" value="4" onclick="edit(this)">4</button>
+    <button class="btn" value="5" onclick="edit(this)">5</button>
+    <button class="btn" value="6" onclick="edit(this)">6</button>
+  </div>
+  <div>
+    <button class="btn" value="7" onclick="edit(this)">7</button>
+    <button class="btn" value="8" onclick="edit(this)">8</button>
+    <button class="btn" value="9" onclick="edit(this)">9</button>
+  </div>
+  <div>
+    <button class="btn" value="*" onclick="edit(this)">*</button>
+    <button class="btn" value="0" onclick="edit(this)">0</button>
+    <button class="btn" value="#" onclick="edit(this)">#</button>
+  </div>
+  <div>
+    <button class="btn2" onclick="call()">発信</button>
+    <button class="btn2" onclick="del()">☒</button>
+    <button class="btn2" onclick="all_del()">CLR</button>
+  </div>
+
+  <script>
+    var result = document.getElementById("result");
+    var element = [];
+    edit = function(elem){
+      element.push(elem.value);
+      var elem_num = element.length -1;
+      result.value = result.value + element[elem_num]; 
+    }
+
+    del = function() {
+      element.pop();
+      var elem_num = element.length-1;
+      result.value = element[0];
+      for(i=1;elem_num>=i;i++){
+        result.value = result.value + element[i];
+      }
+
+      if(!element.length){
+        result.value = "";
+      }
+    }
+
+    all_del = function(){
+      element.splice(0);
+      result.value = "";
+    }
+
+    call = function(){
+      alert(result.value + "に発信中");
+      element.splice(0);
+      result.value = "";
+    }
+  </script>
+</body>
+</html>

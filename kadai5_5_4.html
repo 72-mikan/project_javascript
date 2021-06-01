@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>kadai5-5電話</title>
+</head>
+<body>
+  <input id="result" type="text" value="0">
+  <button onclick="del()">C</button>
+
+  <div>
+    <button class="btn" value="7" onclick="edit(this)">7</button>
+    <button class="btn" value="8" onclick="edit(this)">8</button>
+    <button class="btn" value="9" onclick="edit(this)">9</button>
+    <button value="/" onclick="cal(this)">÷</button>
+  </div>
+  <div>
+    <button class="btn" value="4" onclick="edit(this)">4</button>
+    <button class="btn" value="5" onclick="edit(this)">5</button>
+    <button class="btn" value="6" onclick="edit(this)">6</button>
+    <button value="*" onclick="cal(this)">*</button>
+  </div>
+  <div>
+    <button class="btn" value="1" onclick="edit(this)">1</button>
+    <button class="btn" value="2" onclick="edit(this)">2</button>
+    <button class="btn" value="3" onclick="edit(this)">3</button>
+    <button value="-" onclick="cal(this)">-</button>
+  </div>
+  <div>
+    <button class="btn" value="0" onclick="edit(this)">0</button>
+    <button class="btn" value="." onclick="edit(this)">.</button>
+    <button value="+" onclick="cal(this)">+</button>
+    <button value="=" onclick="cal()">=</button>
+  </div>
+
+  <script>
+    var total = 0;
+    var input = "";
+    var calc = "+";
+    var flag = 1;
+
+    edit = function(elem){
+      flag = 0;
+      input += elem;
+      document.getElemntById(result).value = input.value;
+    }
+
+    cal = function(elem){
+      if(flag == 0){
+        flag = 1;
+        myWork = total + calc + input;
+        total = eval(myWork);
+        input = "";
+        document.getElemntById(result).value = total.value;
+      }
+      if(elem == "="){
+        total = 0;
+        calc = "+";
+      } else {
+        calc = elem;
+      }
+    }
+
+    del = function() {
+      total = 0;
+      calc = "+";
+      input = "";
+      document.getElemntById(result).value = total.value;
+    }
+  </script>
+</body>
+</html>
